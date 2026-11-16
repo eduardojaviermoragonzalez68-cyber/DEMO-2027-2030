@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KANASÍN 2026-2030 | Coordinación Comités de Defensa de la Transformación</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--guinda:#7A0C1D;--guinda2:#9E112B;--oro:#C9A227;--crema:#FFF8E7;--gris:#F2F2F2}
+*{margin:0;padding:0;box-sizing:border-box} body{font-family:'Inter',sans-serif;background:var(--crema)}
+/* BARRA SUPERIOR */
+.topbar{background:var(--guinda);color:white;display:flex;align-items:center;justify-content:space-between;padding:8px 12px;position:sticky;top:0;z-index:100;gap:8px}
+.topbar .perfil{display:flex;align-items:center;gap:8px;min-width:180px}
+.topbar .perfil img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:3px solid var(--oro);background:white}
+.topbar .perfil b{font-family:'Montserrat';font-size:12px;line-height:1.1;display:block}
+.topbar .perfil span{font-size:10px;color:#FFD700}
+.topbar nav{display:flex;flex-wrap:wrap;justify-content:center;gap:4px;flex:1}
+.topbar nav button{background:transparent;border:1px solid rgba(255,255,255,.25);color:white;padding:8px 9px;border-radius:20px;font-size:11px;font-weight:700;cursor:pointer}
+.topbar nav button.active,.topbar nav button:hover{background:var(--oro);color:black}
+.topbar .logo{width:52px;height:52px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+/* LAYOUT */
+.layout{display:flex;align-items:flex-start}
+main{flex:1;padding:18px;max-width:1000px;margin:auto;width:100%}
+aside{width:250px;background:var(--guinda);color:white;min-height:100vh;padding:16px;position:sticky;top:68px}
+aside h3{font-size:12px;letter-spacing:1px;color:var(--oro);margin-bottom:12px;text-align:center}
+aside button{display:block;width:100%;text-align:left;background:rgba(255,255,255,.08);border:none;color:white;padding:13px 12px;margin-bottom:8px;border-radius:10px;font-weight:700;cursor:pointer;font-size:13px}
+aside button:hover,aside button.active{background:white;color:var(--guinda)}
+aside .admin-box{margin-top:20px;background:#111;padding:14px;border-radius:12px}
+aside .admin-box input{width:100%;padding:10px;border-radius:8px;border:none;margin:6px 0}
+aside .admin-box button{background:var(--oro);color:black;text-align:center}
+@media(max-width:850px){.layout{flex-direction:column} aside{width:100%;min-height:auto;position:static} .topbar{flex-wrap:wrap} .topbar .perfil{min-width:auto}}
+.hero{background:linear-gradient(135deg,var(--guinda),#3A060F);color:white;border-radius:18px;padding:28px 20px;text-align:center}
+.hero h1{font-family:'Montserrat';font-size:28px;line-height:1.1} .hero h1 em{color:var(--oro);font-style:normal}
+.hero p{margin:12px 0;opacity:.9} .badge{background:white;color:var(--guinda);padding:6px 12px;border-radius:20px;font-weight:900;font-size:11px;display:inline-block}
+.card{background:white;border-radius:14px;padding:18px;margin:14px 0;box-shadow:0 3px 14px rgba(0,0,0,.07);border-left:6px solid var(--guinda)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px} @media(max-width:600px){.grid{grid-template-columns:1fr} .hero h1{font-size:22px}}
+.galeria{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px} .galeria img,.galeria video{width:100%;height:140px;object-fit:cover;border-radius:10px;background:#ddd}
+@media(max-width:600px){.galeria{grid-template-columns:1fr 1fr}}
+input,select,textarea{width:100%;padding:12px;margin:6px 0;border:1.5px solid #ddd;border-radius:10px;font-size:14px}
+.btn{background:var(--guinda);color:white;border:none;padding:14px;border-radius:12px;font-weight:900;width:100%;cursor:pointer}
+.btn-oro{background:var(--oro);color:black}
+table{width:100%;border-collapse:collapse;font-size:12px;background:white} th,td{padding:8px;border-bottom:1px solid #eee;text-align:left} th{background:var(--guinda);color:white}
+.folio{background:#FFF3CD;padding:10px;border-radius:10px;text-align:center;font-weight:900;margin:10px 0;border:1px dashed var(--oro)}
+.seccion{display:none} .seccion.activa{display:block}
+.pill{display:inline-block;background:#E8F5E9;color:#1B5E20;padding:4px 8px;border-radius:20px;font-size:11px;font-weight:800}
+</style>
+</head>
+<body>
 
+<!-- BARRA SUPERIOR -->
+<header class="topbar">
+  <div class="perfil">
+    <img src="https://via.placeholder.com/100x100/7A0C1D/FFFFFF?text=TU+FOTO" id="fotoPerfil" alt="Aspirante">
+    <div><b>EDUARDO JAVIER<br>MORA GONZÁLEZ</b><span>ASPIRANTE • KANASÍN 2026-2030</span></div>
+  </div>
+  <nav id="topNav">
+    <button class="active" onclick="mostrar('inicio',this)">▶ 1. MENÚ INICIO</button>
+    <button onclick="mostrar('ayuntamiento',this)">▶ 2. AYUNTAMIENTO</button>
+    <button onclick="mostrar('institutos',this)">▶ 3. INSTITUTOS MUNICIPALES</button>
+    <button onclick="mostrar('demografia',this)">▶ 4. DEMOGRAFÍA KANASÍN</button>
+    <button onclick="mostrar('plan',this)">▶ 5. PLAN DESARROLLO 2027-2030</button>
+    <button onclick="mostrar('atencion',this)">▶ 6. ATENCIÓN CIUDADANA</button>
+    <button onclick="mostrar('reporta',this)">▶ 7. REPORTA TU GESTIÓN</button>
+  </nav>
+  <div class="logo" title="Logo ilustrativo">🦅</div>
+</header>
+
+<div class="layout">
+<main>
+  <!-- 1 INICIO -->
+  <div id="inicio" class="seccion activa">
+    <div class="hero"><span class="badge">✦ DEMO • MORENA • KANASÍN YUCATÁN ✦</span><h1>COORDINACIÓN DE LOS COMITÉS<br><em>DE DEFENSA DE LA TRANSFORMACIÓN</em><br>Y SOBERANÍA NACIONAL</h1><p>PROCESO INTERNO ORDINARIO 2026-2030 • PARTICIPACIÓN CIUDADANA<br><b>ÓRGANO INTERNO DE GOBIERNO</b></p></div>
+    <div class="card"><h3>🏛️ ÓRGANO INTERNO DE GOBIERNO</h3><p>Al dar clic en <b>Menú Inicio</b> aparece este órgano. Estructura democrática, asambleas y rendición de cuentas.</p>
+      <div class="grid"><div>👤 <b>Coordinación General</b><br>Eduardo Javier Mora González</div><div>📋 <b>Secretaría de Organización</b><br>Comités por sección y colonia</div><div>💰 <b>Secretaría de Finanzas</b><br>Transparencia y austeridad</div><div>📢 <b>Secretaría de Comunicación</b><br>Vocería y redes populares</div></div>
+    </div>
+    <div class="card"><h3>📸 GALERÍA KANASÍN</h3><div class="galeria">
+      <img src="https://images.unsplash.com/photo-1518105779142-d975f66f1f0a?w=600"><img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=600"><img src="https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?w=600">
+    </div><p style="font-size:12px;margin-top:8px">Cambia estas fotos por tus fotos de Kanasín. Sube tus imágenes a GitHub y pega el link.</p></div>
+    <div class="card"><h3>🎥 VIDEOS DEL MOVIMIENTO</h3><video controls poster="https://images.unsplash.com/photo-1541872703-74c5
